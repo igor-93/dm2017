@@ -2,7 +2,7 @@
 Data Mining Projects 2017
 
 
-##Project 1:
+## Project 1:
 
 In the function mapper we first tokenize the row (i.e. the value), so we obtain a list of shingles for each page (i.e. key). Since the mapper has access to only one page at the time, we create only a column of a signature matrix in a mapper. This column is initated with max possible values and then iteratively for each shingle we search for the smaller row index in the permutation. The permutations are done as described in the lecture where the prime numbers are fixed. The hashing search for the smaller row index in the permutation is vectorized because of the smaller computation times. Finally the Signature matrix column is separated in the bands where band ID is the key and page ID, band column and shingles of the given page are the value of the mapper.
 
@@ -10,7 +10,7 @@ The reducer takes as input the key which is the band ID and and the value contai
 
 The parameters such as number of hash functions, nr. of bands and number of buckets used are all set empirically so that the number of false negatvies is 0 and number of false positives is not as small as possible. 
 
-##Project 2:
+## Project 2:
 
 In the mapper function we call transform(X) with X the chunk of data given to mapper and then svm_adam(X_transformed). The mapper then outputs the weights given by svm_adam as value and key is fixed to string "key". 
 
@@ -20,7 +20,7 @@ svm_adam() is the implementation of ADAM optimizer for hindge loss. The implemen
 
 transform() is the function that projects the data to higher dimensional space by the inverse kernel trick described in the lecture. Here we use the gaussian kernel which means that weights are sampled from gaussian distirbution. Here we have empirically chosen standard deviation to be 4 and the number of new features to be 20000. 
 
-##Project 3:
+## Project 3:
 
 In this project, we have implemented the Loyd's k-means on the full data set. The only difference is the initialization of centroids. For this we use k-means++ approach described in paper by David Arthur and Sergei Vassilvitskii. 
 
