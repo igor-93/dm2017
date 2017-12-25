@@ -35,3 +35,7 @@ get_means() recalculates the means of the clusters.
 stop() returns true if the algorithm converged.
 
 The whole pipeline is implemented in the reducer and maximum number of iterations for k-means is fixed to 300 which is more than enough since empirically discovered, the algorithm stops after 50-60 iterations and sometimes even earlier.
+
+## Project 4:
+
+In this Project we have implemented the LinUCB algorithm as described on the slide 31 of the lecture slides on Bandtis problem. Since we had the user features and the article features, it made sense to start from this algorithm, since the previous proposed algorithms in the lectures did not take the context (i.e. user and article features) into account. The next step was to find good alpha parameter. This was one of the most difficult tasks, since the training data set provided was very small and the results obtained on the server differed a lot from those obtained on the local machine. Thus the usual grid-search approach did not work. In the mean time, we have found the paper on this problem and we there we have found the data set from which we extracted a random subset that was big enough to do the meaningful grid-search for alpha. This way we discovered that alpha of 0.16 was the best fit four our problem. Since this approach was shown to beat the hard baseline easily, there was no need for further development of the algorithm. Although we have implemented the hybrid version of the algorithm, we did not manage to find a good alpha in the reasonable amount of time.
