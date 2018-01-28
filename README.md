@@ -13,7 +13,7 @@ The parameters such as number of hash functions, nr. of bands and number of buck
 
 ## Project 2:
 
-#### SVM, inverse kernel trick
+#### online SVM, inverse kernel trick
 In the mapper function we call transform(X) with X the chunk of data given to mapper and then svm_adam(X_transformed). The mapper then outputs the weights given by svm_adam as value and key is fixed to string "key". 
 
 Reducer then collects all the weights from mappers and takes the mean of those to output the final weights. 
